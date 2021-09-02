@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <%- include ('partials/head') -%>
+    <title>Create Movie</title>
+    <link rel="icon" href="Icon/favicon.ico">
+</head>  
+<body>
+    <%- include ('partials/nav') -%> 
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="col-5">
+                <h1 class="my-4">Create movie:</h1>
+                <form action="/movies/create" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" placeholder='Movie title' class="form-control" name='title'>
+                    </div>
+                    <div class="form-group my-4">
+                        <input type="text" placeholder='Genre' class="form-control" name='genre'>
+                    </div>
+                    <div class="form-group my-4">
+                        <input type="number" placeholder='Year' class="form-control" name='year'>
+                    </div>
+                    <div class="form-group my-4">
+                        <input type="file" placeholder='Poster' class="form-control" name='poster'>
+                    </div>
+                    <div class="form-group my-4">
+                        <input type="number" placeholder='Rating' class="form-control" name='rating'>
+                    </div>
+                    <%if (locals.error !== undefined) { %>
+                         <div class="alert alert-danger">
+                            <%= error %> 
+                         </div>
+                    <% } %> 
+                    <button class="btn btn-success d-block w-100">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>    <%- include ('partials/Footer') -%>
+</body>
+</html>

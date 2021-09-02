@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <%- include ('partials/head') -%>
+    <title>Details Movie</title>
+    <link rel="icon" href="Icon/favicon.ico">
+</head>  
+<body>
+    <%- include ('partials/nav') -%> 
+
+   <div class="container d-flex justify-content-center" style='background-color: #8D98BF'>
+        <div class="col-5 d-flex justify-content-center">
+            <img class="img-responsive rounded" style='width:70%; height:404px; margin: 8%; border: 1px solid black' src="<%='/images/posters/' + movie.poster %> "  alt="">
+        </div>              
+        <div class="col-5 d-grid justify-content-left align-items-center" style='padding: 8% 0%'>
+            <h1 class="card-title" ><%= movie.title %> </h1>
+            <h5 class='card-title' >Genero: <%= movie.genre %> </h5>
+            <h5 class='card-title'>Year: <%= movie.year %> </h5> 
+            <h5 class='card-title'>Rating: <%= movie.rating %> </h5>
+            <div class="d-flex">
+                <div style="margin-right: 2%;" >
+                    <a href='/movies/edit/<%= movie._id %>' style="width: 72px" class='btn btn-info'>Edit</a>
+                </div>
+                <div>
+                    <form action="/movies/delete/<%= movie._id %>" method='POST'>
+                        <button class='btn btn-danger' style="width: 72px">Delete</button>
+                    </form>
+                </div>
+            </div>        
+        </div>           
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script></body>
+</html>
