@@ -3,7 +3,7 @@ const app = express ();
 const path = require('path');
 const mongoose = require ('mongoose');
 
-const mongoDb= 'mongodb://localhost/moviesDB';
+const mongoDb= 'mongodb+srv://joel:1234@cluster0.rrjg1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect( mongoDb,{
     useNewUrlParser: true,
     useUnifiedTopology: true
